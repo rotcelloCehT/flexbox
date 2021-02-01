@@ -1,16 +1,127 @@
+/* SUMMARY */
+/* 
+USE display: flex; create flex container
+USE justify-content: ; for horizontal alignement. (USE IN PARENT CONTAINER)
+USE align-items: ; for vartical alignement. (USE IN CHILD CONTAINER)
+USE flex-direction for COLUMNS instead of ROWS
+USE row-reverse/column-reverse to flip item order
+USE order to customize the order of items
+USE align-self to verticallt align individual items
+*/
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.menu-container {
-    color: #fff;
-    background: #5995da;
-    padding: 20px 0;
-}
 
 .menu {
     border: 1px solid #fff;
     width: 900px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.login {
+    margin-left: 20px;
+}
+
+.signup {
+    margin-left: auto;
+}
+
+.header-container {
+    color: #5995da;
+    background-color: #d6e9fe;
+    display: flex;
+    /* HORIZONTAL allignement done in parent container using justify-content: center; */
+    justify-content: center;
+}
+
+.header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    /* VERTICAL alignement done in child element using align-items: center; */
+    align-items: center;
+}
+
+.social,
+.logo,
+.subsribe {
+    border: 1px solid #5995da;
+}
+
+.social,
+.subscribe {
+    /* ALIGN SELF TO CHANGE vetically align single items A ROW */
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+.photo-grid-container {
+    display: flex;
+    justify-content: center;
+}
+
+.photo-grid {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* FLEX-DIRECTION: column, column-reverse row, row-reverse changes the direction of alignement.*/
+    /*  To align itmes vertically, use align-items: center; */
+    align-items: center;
+}
+
+.photo-grid-item {
+    border: 1px solid #fff;
+    width: 300px;
+    height: 300px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-item {
+    border: 1px solid #fff;
+    background-color: #d6e9fe;
+    height: 200px;
+    flex: 1;
+}
+
+.footer-three {
+    flex: 2;
+}
+
+.footer-one,
+.footer-three {
+    background: #5995da;
+    /* FLEX: INITIAL; */
+    /* initial fixes the layour so width can be added.
+        would be inherited from footer-item */
+    flex: initial;
+    width: 300px;
+}
+
+/* ROW REVERSE WITH ORDER. ! WORKS ACROSS ROWS AND COLUMNS ! */
+/* .first-item {
+    order: 1;
+}
+
+.last-item {
+    order: -1;
+} */
+
+/* FLEX OPTIONS */
+/* 
+    display: flex;
+    justify-content: center, flex-start, flex-end, space-around, space between
+    align-items: center, flex-start (top), flex-end (bottom), stretch, baseline
+*/
